@@ -8,7 +8,6 @@ public class App {
         String location = "Dublin";
         Set<String> options = new HashSet<String>() {
             {
-                add("live");
                 add("aftertomorrow");
             }
         };

@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Set;
 
 public class Wttr {
-
     private final String WTTR_URL = "http://wttr.in";
 
     /**
