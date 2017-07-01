@@ -46,8 +46,8 @@ public class Parser {
      * @return Instance of this class for method chaining.
      */
     public Parser options(Set<String> options) {
-        if (!this.parserOptions.containsAll(options)) {
-            throw new IllegalArgumentException(String.format("%s", options.removeAll(this.parserOptions)));
+        for (String s: options) {
+            System.out.println(options);
         }
         this.options = options;
         return this;

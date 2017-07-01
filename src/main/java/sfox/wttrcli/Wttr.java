@@ -4,8 +4,7 @@ import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Wttr {
     private final String WTTR_URL = "http://wttr.in";
@@ -14,7 +13,7 @@ public class Wttr {
      * Retrieves a weather from from http://wttr.in
      * for a given location.
      * @param location The location for the weather report.
-     * @return List of Strings containg the parsed report
+     * @return List of Strings containing the parsed reports
      *  according to the options given.
      */
     public List<String> getWeatherReport(String location, Set<String> options) {
