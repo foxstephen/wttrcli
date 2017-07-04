@@ -42,35 +42,36 @@ public class Parser {
 
     /**
      * Sets the options for parsing.
+     * If the options are not valid, they will be ignored.
      * @param options Options for parsing.
      * @return Instance of this class for method chaining.
      */
     public Parser options(Set<String> options) {
-        for (String s: options) {
-            System.out.println(options);
-        }
+        options.retainAll(parserOptions);
         this.options = options;
         return this;
     }
 
     /**
-     * Parse the report.
-     * @return All the parsed lines from the report.
+     * Parses the report(s) for the options given.
+     * @return All the parsed reports.
      */
     public List<String> parse() {
-        List<String> parsedReport = new ArrayList<String>();
+        List<String> parsedReports = new ArrayList<String>();
         for (String optionKey: options) {
+            String parsedReport = "";
             int startRange = optionsRanges.get(optionKey).getStart();
             int endRange = optionsRanges.get(optionKey).getEnd();
             List<String> reportLines = Arrays.asList(report.split("\n"));
             for (String line: reportLines.subList(startRange, endRange)) {
-                parsedReport.add(line);
+                parsedReport = parsedReport + line + "\n";
             }
+            parsedReports.add(parsedReport);
         }
-        return parsedReport;
+        return parsedReports;
     }
 
-    private class Range {
+    class Range {
         private int start;
         private int end;
         public Range(int start, int end) {
@@ -78,11 +79,11 @@ public class Parser {
             this.end = end;
         }
 
-        public int getStart() {
+        int getStart() {
             return start;
         }
 
-        public int getEnd() {
+        int getEnd() {
             return end;
         }
     }

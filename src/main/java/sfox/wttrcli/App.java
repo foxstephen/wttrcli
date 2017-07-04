@@ -4,7 +4,6 @@ import org.apache.commons.cli.*;
 
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
 
 public class App {
     public static void main( String[] args ) throws ParseException {
