@@ -71,7 +71,7 @@ public class Parser {
         return parsedReports;
     }
 
-    class Range {
+    public static class Range {
         private int start;
         private int end;
         public Range(int start, int end) {
