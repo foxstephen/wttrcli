@@ -1,6 +1,8 @@
 # Command line weather report using http://wttr.in
 Provides a way to fetch weather report and parse into multiple reports, see below.
 
+![](https://travis-ci.org/StephenFox1995/wttrcli.svg?branch=master)
+
 ### Clone the repository
 ```bash
 git clone https://github.com/StephenFox1995/wttrcli
