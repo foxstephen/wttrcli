@@ -7,6 +7,9 @@ import java.util.HashSet;
 
 public class App {
     public static void main( String[] args ) throws ParseException {
+        if (args.length < 1) {
+            args = new String[] {"-o", "live", "-l", "Dublin"};
+        }
         final Options options = new Options();
         options.addOption("l", "location", true, "The location to fetch the weather report.");
         options.addOption("o", "options", true, "Options for the weather report.");
