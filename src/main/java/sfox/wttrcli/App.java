@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.List;
 
 public class App {
-    private static String USAGE_MESSAGE = "--Usage--\n" +
+    private static final String USAGE_MESSAGE = "--Usage--\n" +
             "\t[l, location]\t: The location to fetch the weather report.\n" +
             "\t[o, option]\t: An option for parsing the report, can be any of the following:\n\t\t\t\t" +
             "all, tomorrow, live, aftertomorrow";
