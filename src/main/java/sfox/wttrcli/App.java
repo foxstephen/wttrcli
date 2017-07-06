@@ -3,7 +3,9 @@ package sfox.wttrcli;
 import org.apache.commons.cli.*;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 
 public class App {
     private static String USAGE_MESSAGE = "--Usage--\n" +
@@ -28,7 +30,10 @@ public class App {
         String location = commandLine.getOptionValue("l") != null ? commandLine.getOptionValue("l") : "Dublin";
         String[] oOptions =
                 commandLine.getOptionValues("o").length > 0 ? commandLine.getOptionValues("o") : new String[]{ "all" };
-        HashSet<String> parserOptions = new HashSet<String>(Arrays.asList(oOptions));
+        List<String> oOptionsList = Arrays.asList(oOptions);
+        // Reverse order, ensures printed as queried
+        Collections.reverse(oOptionsList);
+        HashSet<String> parserOptions = new HashSet<String>(oOptionsList);
 
         for (String report: new Wttr().getWeatherReport(location, parserOptions)) {
             System.out.println(report);
