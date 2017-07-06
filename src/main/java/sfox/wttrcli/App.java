@@ -6,6 +6,11 @@ import java.util.Arrays;
 import java.util.HashSet;
 
 public class App {
+    private static String USAGE_MESSAGE = "--Usage--\n" +
+            "\t[l, location]\t: The location to fetch the weather report.\n" +
+            "\t[o, option]\t: An option for parsing the report, can be any of the following:\n\t\t\t\t" +
+            "all, tomorrow, live, aftertomorrow";
+
     public static void main( String[] args ) throws ParseException {
         final Options options = new Options();
         options.addOption("l", "location", true, "The location to fetch the weather report.");
@@ -13,12 +18,11 @@ public class App {
         options.addOption("h", "help", false, "Lists options.");
 
         CommandLine commandLine = new DefaultParser().parse(options, args);
-        if (commandLine.hasOption("h")) {
-            System.out.println(
-                            "--Usage--\n" +
-                            "\t[l, location]\t: The location to fetch the weather report.\n" +
-                            "\t[o, option]\t: An option for parsing the report, can be any of the following:\n\t\t\t\t" +
-                                    "all, tomorrow, live, aftertomorrow");
+        if (commandLine.getOptions().length == 0) {
+            return;
+        }
+        else if (commandLine.hasOption("h")) {
+            System.out.println(USAGE_MESSAGE);
             return;
         }
         String location = commandLine.getOptionValue("l") != null ? commandLine.getOptionValue("l") : "Dublin";
