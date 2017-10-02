@@ -13,9 +13,19 @@ git clone https://github.com/StephenFox1995/wttrcli
 mvn package
 ```
 
+Alternatively, use the provided install script to run the package command and copy the jar to /usr/local/bin:
+```bash
+./install.sh
+```
+
 ### To run
 ```bash
 java -jar target/wttrcli-1.0.jar <options>
+```
+
+Alternatively, if you ran the install.sh above, the following command will be available:
+```bash
+wttrcli <options>
 ```
 
 ### The following options can be used:
