@@ -51,6 +51,3 @@ java -jar target/wttrcli-1.0.jar -l Dublin -o live -o tomorrow
 java -jar target/wttrcli-1.0.jar -l Madrid -o aftertomorrow
 ```
 ![alt text](./assets/madrid_aftertomorrow.png "java -jar target/wttrcli-1.0.jar -l Madrid -o aftertomorrow")
-
-## TODO: 
-- Add install script for command line
