@@ -38,16 +38,16 @@ wttrcli <options>
 
 ### Examples
 ```bash
-java -jar target/wttrcli-1.0.jar -l Dublin -o all
+wttrcli -l Dublin -o all
 ```
 ![alt text](./assets/dublin_all.png "java -jar target/wttrcli-1.0.jar -l Dublin -o all")
 
 ```bash
-java -jar target/wttrcli-1.0.jar -l Dublin -o live -o tomorrow
+wttrcli -l Dublin -o live -o tomorrow
 ```
 ![alt text](./assets/dublin_live_tomorrow.png "java -jar target/wttrcli-1.0.jar -l Dublin -o live -o tomorrow")
 
 ```bash
-java -jar target/wttrcli-1.0.jar -l Madrid -o aftertomorrow
+wttrcli -l Madrid -o aftertomorrow
 ```
 ![alt text](./assets/madrid_aftertomorrow.png "java -jar target/wttrcli-1.0.jar -l Madrid -o aftertomorrow")
